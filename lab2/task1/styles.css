@@ -2,9 +2,7 @@ body, button, input {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12px;
 }
-* {
-    box-sizing: border-box;
-}
+
 
 body {
     background: #fff;
@@ -119,8 +117,8 @@ input{
 .email{
     font-size: 17px;
     width: 364px;
-    margin: auto;
     padding: 6px 0;
+    margin-bottom: 10px;
 }
 .email  input{
     border-radius: 6px;

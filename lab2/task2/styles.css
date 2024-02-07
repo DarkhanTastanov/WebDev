@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+}
+div {
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.global-container {
+    display: flex;
+    height: 100%;
+    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: black;
+    flex-direction: column;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 32px;
+}
+.header__phone {
+    height: 581.15px;
+    margin-bottom: 12px;
+    background-size: 468.32px 634.15px;
+    align-self: center;
+    flex-basis: 380.32px;
+    margin-right: 32px;
+}
+.header__phone img {
+    height: 538.84px;
+    margin-top: 27px;
+    margin-left: 112px;
+}
+.lo {
+    width: 350px;
+    height: fit-content;
+    text-align: center;
+    box-sizing: border-box;
+}
+.instagram {
+    padding: 10px 0;
+    margin: 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255,255,255);
+}
+.logo {
+    margin-top: 36px;
+    margin-bottom: 12px;
+}
+.logo img {
+    width: 180px;
+    display: inline-block;
+}
+.email-password {
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 1px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    font: inherit;
+    margin: 0 0 10px;
+    padding: 10px 0;
+    vertical-align: baseline;
+    font-size: 14px;
+}
+.email-password label {
+    margin: 0 40px 6px;
+}
+.email-password input {
+    border-bottom-width: 1px;
+    border-color: rgb(219,219,219);
+    border-bottom-style: solid;
+    border-left-width: 1px;
+    box-sizing: border-box;
+    width: 266.8px;
+    height: 36px;
+    border-radius: 1px;
+}
+.inputs {
+    margin: 0 0 10px ;
+}
+#login-button {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    opacity: .7;
+    background-color: rgb(0, 149, 246);
+    border: none;
+    border-radius: 8px;
+    color: rgb(255,255,255);
+    width: 263.4px;
+    height: 32px;
+    align-self: center;
+}
+.span-main {
+    margin: 10px 40px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.span2 {
+    top: 0.45em;
+    height: 1px;
+    background-color: rgb(219,219,219);
+    position: relative;
+    flex-grow: 1;
+}
+#span-or {
+    text-transform: uppercase;
+    margin-right: 18px;
+    margin-left: 18px;
+    font-weight: 600;
+    color: rgb(115,115,115);
+    font-size: .8125rem;
+    line-height: 1.1538;
+    align-items: stretch;
+    position: relative;
+}
+#span-or {
+    vertical-align: baseline;
+}
+.facebook {
+    overflow-y: visible;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.log-in-facebook {
+    display: inline-block;
+    padding: 0;
+    position: relative;
+    border: 0;
+    color: rgb(0, 149,246);
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: inherit;
+    width: auto;
+
+}
+button {
+    line-height: 18px;
+    align-self: center;
+}
+.facebook-logo {
+    border: 0;
+    display: inline-block;
+    font: inherit;
+    font-size: 100%;
+    margin-right: 8px;
+    padding: 0;
+    position: relative;
+    top: 3px;
+    vertical-align: baseline;
+    background-size: 440px 411px;
+    background-position: -347px -329px;
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    text-align: center;
+    align-self: center;
+}
+.facebook-logo img {
+    height: 16px;
+    width: 16px;
+}
+.facebook-text {
+    position: relative;
+    align-self: center;
+    color: #385185;
+    text-align: center;
+}
+.forgot {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+}
+.forgot {
+    font-weight: 400;
+    text-decoration: none;
+}
+.sign-up {
+    align-items: center;
+    background-color: rgb(255,255,255);
+    border: 1px solid rgb(219,219,219);
+    border-radius: 1px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0 0 10px;
+    padding: 10px 0;
+    position: relative;
+    vertical-align: baseline;
+}
+#dont-have {
+    color: rgb(0,0,0);
+    font-size: 14px;
+    margin: 15px;
+
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+.sign-up a{
+    color: rgb(0, 149, 246);
+    text-decoration: none;
+}
+.forgot a{
+    text-decoration: none;
+    color: rgb(0,55,105);
+}
+.get-app {
+    display: flex;
+    flex-direction: column;
+}
+.get-app div {
+    border: 0;
+    font: inherit;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px 20px 10px 20px;
+    padding: 0;
+    text-align: center;
+    vertical-align: baseline;
+}
+.get-app img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+    width: 254.28px;
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: #737373;
+    font-size: 12px;
+    margin: 24px;
+}
+#options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+#options a {
+    text-decoration: none;
+    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: rgb(115,115,155);
+}
+.meta-block p, .meta-block span {
+    text-decoration: none;
+    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: rgb(115,115,155);
+}
