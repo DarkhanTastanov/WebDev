@@ -32,9 +32,7 @@ div {
     margin-right: 32px;
 }
 .header__phone img {
-    height: 538.84px;
-    margin-top: 27px;
-    margin-left: 112px;
+    height: 598.84px;
 }
 .lo {
     width: 350px;
@@ -230,6 +228,8 @@ p {
 .get-app {
     display: flex;
     flex-direction: column;
+    align-self: center;
+
 }
 .get-app div {
     border: 0;
@@ -247,6 +247,7 @@ p {
     justify-content: center;
     margin: 10px 0 10px 0;
     width: 254.28px;
+    align-self: center;
 }
 .footer {
     display: flex;
@@ -258,6 +259,11 @@ p {
     color: #737373;
     font-size: 12px;
     margin: 24px;
+}
+.footer__options {
+    margin-top: 124px;
+    display: flex;
+    flex-direction: row;
 }
 #options {
     display: flex;
@@ -273,8 +279,13 @@ p {
     font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: rgb(115,115,155);
 }
+.meta-block {
+    display: flex;
+    flex-direction: row;
+}
 .meta-block p, .meta-block span {
     text-decoration: none;
     font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: rgb(115,115,155);
+    align-self: center;
 }
