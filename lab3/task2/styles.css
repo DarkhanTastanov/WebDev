@@ -57,6 +57,9 @@ button {
     font-weight: bold;
     color: firebrick;
 }
+#add:hover {
+    background-color: yellow;
+}
 .removeButton {
     font-weight: bold;
     color: darkgoldenrod;

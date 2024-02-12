@@ -16,6 +16,7 @@ document.addEventListener('keydown', function(event) {
 function addNewToDo() {
     let newToDo = {
         listToDo: newText.value,
+        checked: false,
     };
     toDoList.push(newToDo);
     displayMessages();
@@ -33,6 +34,7 @@ function displayMessages(){
     toDoList.forEach(function (item, i){
         displayNewText += `
         <li>
+            <input type="checkbox" id="item_${i}">
             <label for="item_${i}">${item.listToDo}</label>
             <button class="removeButton" data-index="${i}">Remove</button>
         </li>
