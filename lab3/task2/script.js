@@ -4,14 +4,23 @@ let newText = document.querySelector('#input0'),
 
 let toDoList = [];
 addButton.addEventListener('click', function (){
-
-    let newToDo = {
-           listToDo: newText.value,
-       };
-        toDoList.push(newToDo);
-        displayMessages();
+    addNewToDo();
 });
 
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && document.activeElement === newText) {
+        addNewToDo();
+    }
+});
+
+function addNewToDo() {
+    let newToDo = {
+        listToDo: newText.value,
+    };
+    toDoList.push(newToDo);
+    displayMessages();
+    newText.value = '';
+}
 listToDo.addEventListener('click', function(event) {
     if (event.target.classList.contains('removeButton')) {
         const indexToRemove = event.target.getAttribute('data-index');
