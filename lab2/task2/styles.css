@@ -146,6 +146,9 @@ div {
     width: auto;
 
 }
+a {
+    text-decoration: none;
+}
 button {
     line-height: 18px;
     align-self: center;

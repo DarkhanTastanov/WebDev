@@ -2,8 +2,6 @@ body, button, input {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12px;
 }
-
-
 body {
     background: #fff;
     color: #1c1e21;
@@ -25,25 +23,16 @@ body div {
     margin: 0 auto;
     font-family: inherit;
     position: relative;
-
 }
 .header {
-    margin: 0;
-    outline: none;
-    padding-bottom: 112px;
-    width: auto;
     min-height: 640px;
 }
 .header{
     min-width: 500px;
     background: #f0f2f5;
-    padding-bottom: 112px;
-    padding-top: 72px;
 }
 .header{
-    height: 496px;
     margin: auto 460px;
-    width: 980px;
     padding: 20px 0;
     position: relative;
 }
@@ -83,13 +72,10 @@ img {
     width: 396px;
 }
 .forms {
-    padding-bottom: 24px;
-    padding-top: 10px;
     max-height: 394px;
 }
 .forms {
     text-align: center;
-    align-items: center;
     background-color: #fff;
     border: none;
     border-radius: 8px;
@@ -168,7 +154,6 @@ input{
     color: #fff;
     transition: 200ms cubic-bezier(.08,.52,.52,1) background-color, 200ms cubic-bezier(.08,.52,.52,1) box-shadow, 200ms cubic-bezier(.08,.52,.52,1) transform;
     box-sizing: content-box;
-    -webkit-font-smoothing: antialiased;
     font-weight: bold;
     vertical-align: middle;
 }
