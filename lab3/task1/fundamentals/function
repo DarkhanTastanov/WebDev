@@ -1,0 +1,24 @@
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('Did parents allow you?');
+  }
+}
+let age = (age > 18)? true : confirm('Did parents allow you?');
+function checkAge(age) {
+  return (age > 18) || confirm('Did parents allow you?');
+}
+//
+function min(a, b){
+  let least = (a > b )? b: a;
+}
+function pow(x, n){
+  let res ;
+  for (let i = 1; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+//
