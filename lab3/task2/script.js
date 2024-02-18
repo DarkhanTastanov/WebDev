@@ -1,6 +1,7 @@
 let newText = document.querySelector('#input0'),
     addButton = document.querySelector('#add'),
     listToDo = document.querySelector('.listToDo');
+    hello = document.querySelector('#hello');
 
 let toDoList = [];
 addButton.addEventListener('click', function (){
@@ -42,3 +43,7 @@ function displayMessages(){
     });
     listToDo.innerHTML = displayNewText;
 }
+function helloAlert(){
+    console.log("Hello World!");
+}
+hello.addEventListener('click',helloAlert);
