@@ -4,8 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { HousingService } from '../housing.service';
 import { HousingLocation } from '../housinglocation';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ProductsDetails} from "../productsDetails";
 import { ProductDetailing} from "../product.detailing";
+import { ProductsDetails} from "../productsDetails";
 import {ProductsComponent} from "../products/products.component";
 
 @Component({
@@ -46,16 +46,17 @@ import {ProductsComponent} from "../products/products.component";
 <!--        </form>-->
 <!--      </section>-->
 <!--    </article>-->
-<article>
-  <img class="listing-photo" [src]="ProductDetailing?.photo"
-       alt="Exterior photo of {{ProductDetailing?.name}}"/>
+<article *ngIf="productsDetails">>
+  <img class="listing-photo" [src]="productsDetails?.photo"
+       alt="Exterior photo of {{productsDetails?.name}}"/>
   <section class="listing-description">
-    <h2 class="listing-heading">{{ProductDetailing?.name}}</h2>
+    <h2 class="listing-heading">{{productsDetails?.name}}</h2>
   </section>
   <section class="listing-features">
-    <h2 class="section-heading">About this housing location</h2>
+    <h2 class="section-heading">About this product</h2>
     <ul>
-      <li>Units available: {{ProductDetailing?.availableUnits}}</li>
+      <li>Units available: {{productsDetails?.availableUnits}}</li>
+      <li>Description: {{productsDetails?.description}}</li>
     </ul>
   </section>
 <!--  <section class="listing-apply">-->
@@ -99,4 +100,5 @@ export class DetailsComponent {
   // }
 
   protected readonly ProductDetailing = ProductDetailing;
+  protected readonly ProductsComponent = ProductsComponent;
 }

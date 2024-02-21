@@ -16,18 +16,22 @@ import {ProductsComponent} from "../products/products.component";
     ProductsComponent,
   ],
   template: `
-<!--    <section>-->
-<!--      <form>-->
-<!--        <input type="text" placeholder="Filter by city" #filter>-->
-<!--        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>-->
-<!--      </form>-->
-<!--    </section>-->
-<!--    <section class="results">-->
+    <section>
+      <form>
+        <input type="text" placeholder="Filter by city" #filter>
+        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+      </form>
+    </section>
+    <section class="results">
 <!--      <app-housing-location-->
 <!--        *ngFor="let housingLocation of filteredLocationList"-->
 <!--        [housingLocation]="housingLocation">-->
 <!--      </app-housing-location>-->
-<!--    </section>-->
+      <app-products-details
+        *ngFor="let productsDetails of filteredProductsList"
+        [productsDetails]="productsDetails">
+      </app-products-details>
+    </section>
   `,
   styleUrls: ['./home.component.css'],
 })
@@ -38,6 +42,7 @@ export class HomeComponent {
   // filteredLocationList: HousingLocation[] = [];
   productsDetailsList: ProductsDetails[] = [];
   productDetailing: ProductDetailing = inject(ProductDetailing);
+  filteredProductsList: ProductsDetails[] = [];
 
   // constructor() {
   //   this.housingLocationList = this.housingService.getAllHousingLocations();
@@ -45,6 +50,7 @@ export class HomeComponent {
   // }
   constructor() {
     this.productsDetailsList = this.productDetailing.getAllProductDetails();
+    this.filteredProductsList = this.productsDetailsList;
   }
   // filterResults(text: string) {
   //   if (!text) {
@@ -56,4 +62,14 @@ export class HomeComponent {
   //     housingLocation => housingLocation?.city.toLowerCase().includes(text.toLowerCase())
   //   );
   //}
+  filterResults(text: string) {
+      if (!text) {
+        this.filteredProductsList = this.productsDetailsList;
+        return;
+      }
+
+      this.filteredProductsList = this.productsDetailsList.filter(
+        housingLocation => housingLocation?.price.toLowerCase().includes(text.toLowerCase())
+      );
+    }
 }
