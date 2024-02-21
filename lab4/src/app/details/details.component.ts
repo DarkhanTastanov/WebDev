@@ -47,16 +47,17 @@ import {ProductsComponent} from "../products/products.component";
 <!--      </section>-->
 <!--    </article>-->
 <article *ngIf="productsDetails">>
-  <img class="listing-photo" [src]="productsDetails?.photo"
-       alt="Exterior photo of {{productsDetails?.name}}"/>
+  <img class="listing-photo" [src]="productsDetails.photo"
+       alt="Exterior photo of {{productsDetails.name}}"/>
   <section class="listing-description">
-    <h2 class="listing-heading">{{productsDetails?.name}}</h2>
+    <h2 class="listing-heading">{{productsDetails.name}}</h2>
   </section>
   <section class="listing-features">
     <h2 class="section-heading">About this product</h2>
     <ul>
-      <li>Units available: {{productsDetails?.availableUnits}}</li>
-      <li>Description: {{productsDetails?.description}}</li>
+      <li>Units available: {{productsDetails.availableUnits}}</li>
+      <li>Description: {{productsDetails.description}}</li>
+      <li><a [href]="productsDetails.kaspiURL" target="_blank">Link to Kaspi Shop</a></li>
     </ul>
   </section>
 <!--  <section class="listing-apply">-->

@@ -5,4 +5,5 @@ export interface ProductsDetails {
   photo: string;
   availableUnits: number;
   price: string;
+  kaspiURL: string;
 }
