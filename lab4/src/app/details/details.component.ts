@@ -46,7 +46,7 @@ import {ProductsComponent} from "../products/products.component";
 <!--        </form>-->
 <!--      </section>-->
 <!--    </article>-->
-<article *ngIf="productsDetails">>
+<article *ngIf="productsDetails">
   <img class="listing-photo" [src]="productsDetails.photo"
        alt="Exterior photo of {{productsDetails.name}}"/>
   <section class="listing-description">
