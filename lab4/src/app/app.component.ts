@@ -6,7 +6,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [
-    HomeComponent,
     RouterLink,
     RouterOutlet,
   ],
@@ -25,5 +24,5 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'homes';
+  title = 'Products';
 }

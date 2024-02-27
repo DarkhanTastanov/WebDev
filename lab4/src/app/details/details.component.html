@@ -1,0 +1,26 @@
+
+<article *ngIf="productItem">
+  <div class="lphdiv">
+    <img class="listing-photo" [src]="productItem.photo"
+       alt="Exterior photo of {{productItem.name}}"/>
+  </div>
+  <section class="listing-description">
+    <h2 class="listing-heading">{{productItem.name}}</h2>
+  </section>
+  <section class="listing-features">
+    <h2 class="section-heading">About this product</h2>
+    <ul>
+      <li>Units available: {{productItem.availableUnits}}</li>
+      <li>Description: {{productItem.description}}</li>
+      <li>Price: {{productItem.price}}</li>
+      <li><a [href]="productItem.kaspiURL" target="_blank">Link to Kaspi Shop</a></li>
+      <div class="like-dislike">
+        <button (change)="productListComponent.incrementLikes(productItemComponent.numberOfLikes)">
+        <p>Like</p>
+        </button>{{productItemComponent.numberOfLikes}}
+        <button (change)="productListComponent.decrementLikes(productItemComponent.numberOfLikes)">Dislike</button>
+      </div>
+    </ul>
+
+  </section>
+</article>

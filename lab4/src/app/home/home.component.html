@@ -1,0 +1,19 @@
+<section>
+  <form>
+    <div>
+      <select name="Category" id="your_id" (click)="filterResults(filter.value)" #filter>
+        <option value="">All</option>
+        <option value="Food" >Food</option>
+        <option value="Home equipment">Home equipment</option>
+        <option value="Pharmacy">Pharmacy</option>
+        <option value="Furniture">Furniture</option>
+      </select>
+    </div>
+  </form>
+</section>
+<section class="results">
+  <app-products-details
+    *ngFor="let productsDetails of filteredProductsList"
+    [productItemComponent]="productsDetails">
+  </app-products-details>
+</section>

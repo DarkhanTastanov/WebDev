@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
-import { ProductsDetails } from './productsDetails';
+import { ProductItemComponent} from "../product-item/product-item.component";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductDetailing {
-  protected productsDetailsList: ProductsDetails[] = [
+  export class ProductListComponent {
+  protected productItemList: ProductItemComponent[] = [
     {
       id: 10,
       name: 'Coca-Cola Classic газированный напиток 2 л',
       description: 'страна производства: Казахстан\n'+
-                    'условия хранения: хранить в сухом месте при температуре от 0°С до +20°С, избегая прямого попадания солнечных лучей\n' +
-                    'тип: газированный напиток\n' +
-                    'без сахара: Нет\n' +
-                    'вкус: кола',
+        'условия хранения: хранить в сухом месте при температуре от 0°С до +20°С, избегая прямого попадания солнечных лучей\n' +
+        'тип: газированный напиток\n' +
+        'без сахара: Нет\n' +
+        'вкус: кола',
       photo: 'https://resources.cdn-kaspi.kz/img/m/p/h1c/hf1/85128198684702.png?format=gallery-large',
       availableUnits: 100,
       price: "415 ₸",
       kaspiURL: 'https://kaspi.kz/shop/p/coca-cola-classic-gazirovannyi-napitok-2-l-100208094/?c=750000000',
-      numberOfLikes: 16,
+      numberOfLikes: 10,
       category: 'Food'
     },
     {
@@ -32,7 +32,7 @@ export class ProductDetailing {
       availableUnits: 100,
       price: "415 ₸",
       kaspiURL: 'https://kaspi.kz/shop/p/pechen-e-orion-choco-pie-original-360-g-101006400/?c=750000000',
-      numberOfLikes: 16,
+      numberOfLikes: 15,
       category: 'Food'
     },
     {
@@ -45,7 +45,7 @@ export class ProductDetailing {
       availableUnits: 10,
       price: "537 ₸",
       kaspiURL: 'https://kaspi.kz/shop/p/tassay-pit-evaja-negazirovannaja-5-l-100236269/?c=750000000',
-      numberOfLikes: 16,
+      numberOfLikes: 176,
       category: 'Food'
     },
     {
@@ -59,7 +59,7 @@ export class ProductDetailing {
       availableUnits: 10000,
       price: "779 ₸/кг",
       kaspiURL: 'https://kaspi.kz/shop/p/magnum-jabloko-amerikanka-kazahstan-102382796/?c=750000000',
-      numberOfLikes: 16,
+      numberOfLikes: 6,
       category: 'Food'
     },
     {
@@ -116,7 +116,7 @@ export class ProductDetailing {
       category: 'Pharmacy'
     },
     {
-      id: 17,
+      id: 30,
       name: 'Танфлекс спрей 0.15% 30 мл',
       description: 'назначение: средства от боли в горле\n' +
         'антибиотик: Нет\n' +
@@ -340,11 +340,24 @@ export class ProductDetailing {
     },
   ];
 
-  getAllProductDetails(): ProductsDetails[] {
-    return this.productsDetailsList;
+  getAllProductItemList(): ProductItemComponent[] {
+    return this.productItemList;
   }
 
-  getProductsDetailsById(id: number): ProductsDetails | undefined {
-    return this.productsDetailsList.find(productsDetails => productsDetails.id === id);
+  getProductItemListById(id: number): ProductItemComponent | undefined {
+    return this.productItemList.find(productItemComponent => productItemComponent.id === id);
+  }
+  incrementLikes(id: number): void {
+    const product = this.productItemList.find(item => item.id === id);
+    if (product) {
+      product.numberOfLikes++;
+    }
+  }
+
+  decrementLikes(id: number): void {
+    const product = this.productItemList.find(item => item.id === id);
+    if (product && product.numberOfLikes > 0) {
+      product.numberOfLikes--;
+    }
   }
 }

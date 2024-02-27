@@ -1,4 +1,5 @@
-export interface ProductsDetails {
+
+export interface ProductItemComponent {
   id: number;
   name: string;
   description: string;
