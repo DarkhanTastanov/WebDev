@@ -29,3 +29,24 @@ section.listing a::after {
   content: "\203A";
   margin-left: 5px;
 }
+.like-dislike {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+.like-dislike button {
+  background-color: crimson;
+  color: white;
+  border-radius: 5px;
+}
+.like-dislike .like {
+  margin:3px 10px;
+  padding: 0 5px;
+}
+.like-dislike .remove {
+  padding: 0 5px;
+  margin: 3px 10px;
+}
+.like:hover, .remove:hover {
+  background-color: white;
+}

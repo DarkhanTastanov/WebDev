@@ -19,4 +19,30 @@ export class ProductsComponent {
 
   @Input() productItemComponent!: ProductItemComponent;
   @Input() productListComponent!: ProductListComponent;
+
+  constructor() {}
+
+  removeItem(id: number) {
+    if (this.productListComponent) {
+      this.productListComponent.removeItem(id);
+    } else {
+      console.error('ProductListComponent not provided.');
+    }
+  }
+
+  incrementLikes(id: number) {
+    if (this.productListComponent) {
+      this.productListComponent.incrementLikes(id);
+    } else {
+      console.error('ProductListComponent not provided.');
+    }
+  }
+
+  decrementLikes(id: number) {
+    if (this.productListComponent) {
+      this.productListComponent.decrementLikes(id);
+    } else {
+      console.error('ProductListComponent not provided.');
+    }
+  }
 }

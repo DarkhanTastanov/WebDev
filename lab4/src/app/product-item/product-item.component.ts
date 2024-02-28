@@ -1,4 +1,3 @@
-
 export interface ProductItemComponent {
   id: number;
   name: string;
@@ -10,3 +9,4 @@ export interface ProductItemComponent {
   numberOfLikes: number;
   category: string;
 }
+

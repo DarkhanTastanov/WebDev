@@ -2,8 +2,13 @@
   <img class="listing-photo" [src]="productItemComponent.photo" alt="Exterior photo of {{productItemComponent.name}}">
   <h2 class="listing-heading">{{ productItemComponent.name }}</h2>
   <div class="like-dislike">
-    <button (change)="productListComponent.incrementLikes(productItemComponent.numberOfLikes)">Like</button>{{productItemComponent.numberOfLikes}}
-    <button (change)="productListComponent.decrementLikes(productItemComponent.numberOfLikes)">Dislike</button>
+    <div>
+      <button class="like" (click)="incrementLikes(productItemComponent.id)">Like</button>
+
+      {{productItemComponent.id}}
+<!--    <button (change)="productListComponent.decrementLikes(productItemComponent.numberOfLikes)">Dislike</button>-->
+    </div>
+      <button class="remove" (click)="removeItem(productItemComponent.id)">Remove</button>
   </div>
   <a [routerLink]="['/details', productItemComponent.id]">Learn More</a>
 </section>
