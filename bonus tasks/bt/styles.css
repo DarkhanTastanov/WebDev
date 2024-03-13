@@ -1,0 +1,7 @@
+div {
+    display: flex;
+    flex-direction: column;
+}
+.visual {
+    padding: 100px;
+}

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {ProductItemComponent} from "../product-item/product-item.component";
@@ -22,27 +22,11 @@ export class ProductsComponent {
 
   constructor() {}
 
-  removeItem(id: number) {
-    if (this.productListComponent) {
-      this.productListComponent.removeItem(id);
-    } else {
-      console.error('ProductListComponent not provided.');
-    }
-  }
+  // removeItem(id: number) {
+  //   this.productItemComponent.filter(id, 1)
+  // }
 
   incrementLikes(id: number) {
-    if (this.productListComponent) {
-      this.productListComponent.incrementLikes(id);
-    } else {
-      console.error('ProductListComponent not provided.');
-    }
-  }
-
-  decrementLikes(id: number) {
-    if (this.productListComponent) {
-      this.productListComponent.decrementLikes(id);
-    } else {
-      console.error('ProductListComponent not provided.');
-    }
+    this.productItemComponent.numberOfLikes++;
   }
 }

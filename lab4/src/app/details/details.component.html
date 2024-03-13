@@ -15,9 +15,8 @@
       <li>Price: {{productItem.price}}</li>
       <li><a [href]="productItem.kaspiURL" target="_blank">Link to Kaspi Shop</a></li>
       <div class="like-dislike">
-        <button (change)="productListComponent.incrementLikes(productItemComponent.numberOfLikes)">Like</button>
         <p class="numoflikes">{{productItemComponent.numberOfLikes}}</p>
-<!--        <button (change)="productListComponent.decrementLikes(productItemComponent.numberOfLikes)">Dislike</button>-->
+
       </div>
     </ul>
 

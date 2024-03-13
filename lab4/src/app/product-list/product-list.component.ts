@@ -347,26 +347,26 @@ export class ProductListComponent {
   getProductItemListById(id: number): ProductItemComponent | undefined {
     return this.productItemList.find(productItemComponent => productItemComponent.id === id);
   }
-  incrementLikes(id: number): void {
-    const product = this.productItemList.find(item => item.id === id);
-    if (product) {
-      product.numberOfLikes++;
-      alert("Like");
-    }
-  }
-
-
-  decrementLikes(id: number): void {
-    const product = this.productItemList.find(item => item.id === id);
-    if (product && product.numberOfLikes > 0) {
-      product.numberOfLikes--;
-    }
-  }
-
-  removeItem(id: number) {
-    const index = this.productItemList.findIndex(item => item.id === id);
-    if (index !== -1) {
-      this.productItemList.splice(index, 1);
-    }
-  }
+//   incrementLikes(id: number): void {
+//     const product = this.productItemList.find(item => item.id === id);
+//     if (product) {
+//       product.numberOfLikes++;
+//       alert("Like");
+//     }
+//   }
+//
+//
+//   decrementLikes(id: number): void {
+//     const product = this.productItemList.find(item => item.id === id);
+//     if (product && product.numberOfLikes > 0) {
+//       product.numberOfLikes--;
+//     }
+//   }
+//
+//   removeItem(id: number) {
+//     const index = this.productItemList.findIndex(item => item.id === id);
+//     if (index !== -1) {
+//       this.productItemList.splice(index, 1);
+//     }
+//   }
 }
