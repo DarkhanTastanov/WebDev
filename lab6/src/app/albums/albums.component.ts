@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Albums } from '../models';
-import { ALBUMS } from '../database';
+
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { AlbumServiceService } from '../album-service.service';
 
 import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-albums',

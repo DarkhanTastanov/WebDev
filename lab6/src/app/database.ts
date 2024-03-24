@@ -9,7 +9,7 @@ for(let i: number = 0; i < 5; i++){
             userId: i+1,
             id: i+1,
             title: `title ${i + 1}`,
-            info: "Nurikkkkk jjj "
+            info: "Nothing to see here "
         }
     )
     PHOTOS.push(

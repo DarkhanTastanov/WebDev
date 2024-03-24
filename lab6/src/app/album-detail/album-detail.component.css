@@ -8,9 +8,14 @@
 
 }
 .header1 img {
+  max-height: 20000%;
   max-width: 100%;
 }
+#title {
+  align-self: center;
+  margin: 17px 0px 15px 0px;
 
+}
 .photos{
     z-index: 2;
     position: absolute;

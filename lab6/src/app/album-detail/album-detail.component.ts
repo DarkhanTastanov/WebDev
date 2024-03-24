@@ -21,15 +21,15 @@ export class AlbumDetailComponent implements OnInit{
   albums!: Albums;
   newTitle!: string;
   // loaded: boolean = false;
-  constructor(private route: ActivatedRoute, 
-              private albumService: AlbumServiceService, 
+  constructor(private route: ActivatedRoute,
+              private albumService: AlbumServiceService,
               private location: Location ){
 
   }
   ngOnInit(): void {
     this.getAlbums();
   }
-  
+
   getAlbums(){
     this.route.paramMap.subscribe((params) => {
       const albumsId = Number(params.get('albumsId'));
@@ -51,11 +51,11 @@ export class AlbumDetailComponent implements OnInit{
 }
 
 updateAlbum() {
-  
+
   this.route.paramMap.subscribe((params) => {
     const albumsId = Number(params.get('albumsId'));
   this.albumService.updateAlbumTitle(albumsId, this.newTitle).subscribe((updated) => {
-    alert('ss');
+    alert('Saved')
     this.albums.title = updated.title;
   });
 
