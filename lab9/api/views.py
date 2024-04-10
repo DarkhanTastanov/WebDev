@@ -1,72 +1,85 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.http import JsonResponse
-from .models import Company, Vacancy
+import json
 
+from django.http.response import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from api.models import Company, Vacancy
+
+@csrf_exempt
 def companies_list(request):
-    queryset = Company.objects.all()
-    data = {'Companies': list(queryset.values())}
-    return JsonResponse(data)
+    if request.method == 'GET':
+        companies = Company.objects.all()
+        companies_json = [c.to_json() for c in companies]
+        return JsonResponse(companies_json, safe=False)
+    elif request.method == 'POST':
+        data = json.loads(request.body)
+        company = Company.objects.create(name=data.get("name"),
+                                         description=data.get("description"),
+                                         city=data.get("city"),
+                                         address=data.get("address"))
+        return JsonResponse(company.to_json())
 
-def company_by_id(request, id):
-    try:
-        company = Company.objects.get(id=id)
-    except Company.DoesNotExist:
-        return JsonResponse({'error': 'Company not found'}, status=404)
-
-    data = {'Company': {
-        'name': company.name,
-        'description': company.description,
-        'city': company.city,
-        'address': company.address
-    }}
-    return JsonResponse(data)
-
-
-def company_vacancies(request, id):
-    try:
-        company = Company.objects.get(id=id)
-    except Company.DoesNotExist:
-        return JsonResponse({'error': 'Company not found'}, status=404)
-
-    vacancies = company.vacancies.all()
-    data = [{
-        'id': v.id,
-        'title': v.name,
-        'description': v.description,
-        'salary': v.salary
-    } for v in vacancies]
-    return JsonResponse(data, safe=False)
-
+@csrf_exempt
 def vacancies_list(request):
-    queryset = Vacancy.objects.all()
-    data = {'Vacancies': list(queryset.values())}
-    return JsonResponse(data)
+    if request.method == 'GET':
+        vacancies = Vacancy.objects.all()
+        vacancies_json = [v.to_json() for v in vacancies]
+        return JsonResponse(vacancies_json, safe=False)
+    elif request.method == 'POST':
+        data = json.loads(request.body)
+        vacancy = Vacancy.objects.create(name=data.get("name"),
+                                         description=data.get("description"),
+                                         salary=data.get("salary"),
+                                         company=Company.objects.get(name=data.get("company")))
 
-def vacancies_by_id(request, id):
-    try:
-        vacancy = Vacancy.objects.get(id=id)
-    except Vacancy.DoesNotExist:
-        return JsonResponse({'error': 'Company not found'}, status=404)
+        return JsonResponse(vacancy.to_json())
 
-    data = {'Company': {
-        'name': vacancy.name,
-        'description': vacancy.description,
-        'city': vacancy.city,
-        'address': vacancy.address
-    }}
-    return JsonResponse(data)
+@csrf_exempt
+def company_by_id(request, pk):
+    company = Company.objects.get(id=pk)
+    if request.method == 'GET':
+        return JsonResponse(company.to_json())
+    elif request.method == 'PUT':
+        data = json.loads(request.body)
+        company.name = data.get("name")
+        company.description = data.get("description")
+        company.city = data.get("city")
+        company.address = data.get("address")
+        company.save()
+        return JsonResponse(company.to_json())
+    elif request.method == 'DELETE':
+        company.delete()
+        return JsonResponse({"deleted": True})
+
+
+
+def company_vacancies(request, pk):
+    company = Company.objects.get(id=pk)
+    vacancies = company.vacancies.all()
+    return JsonResponse({'vacancies': list(vacancies.values())})
+
+@csrf_exempt
+def vacancies_by_id(request, pk=None):
+    vacancy = Vacancy.objects.get(id=pk)
+    if request.method == 'GET':
+        return JsonResponse(vacancy.to_json())
+    elif request.method == 'PUT':
+        data = json.loads(request.body)
+        vacancy.name = data.get("name")
+        vacancy.description = data.get("description")
+        vacancy.salary = data.get("salary")
+        vacancy.company = Company.objects.get(name=data.get("company"))
+        vacancy.save()
+        return JsonResponse(vacancy.to_json())
+    elif request.method == 'DELETE':
+        vacancy.delete()
+        return JsonResponse({"deleted": True})
 
 
 def top_ten_vacancies(request):
     vacancies = Vacancy.objects.order_by('-salary')[:10]
-
-    data = [{
-        'id': v.id,
-        'name': v.name,
-        'description': v.description,
-        'salary': v.salary,
-        'company': v.company.name
-    } for v in vacancies]
-
+    data = [{'id': vacancy.id,
+             'name': vacancy.name,
+             'description': vacancy.description,
+             'salary': vacancy.salary,
+             'company': vacancy.company.name} for vacancy in vacancies]
     return JsonResponse(data, safe=False)
